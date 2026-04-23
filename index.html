@@ -242,38 +242,7 @@
       position: relative;
     }
 
-    .hero-mockup-bar {
-      background: var(--dark3);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .hero-mockup-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-    }
-    .d1 { background: #ff5f57; }
-    .d2 { background: #ffbd2e; }
-    .d3 { background: #28c940; }
-
-    .hero-mockup-bar-url {
-      flex: 1;
-      background: rgba(255,255,255,0.06);
-      border-radius: 6px;
-      height: 22px;
-      margin-left: 8px;
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-    }
-    .hero-mockup-bar-url span {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.35);
-      font-family: monospace;
-    }
+    .hero-mockup-bar { display: none; }
 
     .hero-mockup-frame img,
     .hero-mockup-frame video {
@@ -368,29 +337,33 @@
     }
 
     .hero-nav-pills {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
     }
 
     .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: transparent;
-      border: 1.5px solid rgba(255,255,255,0.18);
-      border-radius: 50px;
-      padding: 11px 20px;
+      border: none;
+      padding: 6px 18px 6px 0;
       font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
       text-decoration: none;
-      text-align: center;
-      transition: all 0.2s;
+      transition: color 0.2s;
+      position: relative;
     }
-    .hero-pill:hover {
-      background: rgba(240,180,41,0.08);
-      border-color: rgba(240,180,41,0.5);
-      color: var(--gold);
+    .hero-pill + .hero-pill::before {
+      content: '·';
+      color: rgba(255,255,255,0.2);
+      margin-right: 18px;
     }
+    .hero-pill:hover { color: var(--gold); }
 
     /* ── STATS BAR ── */
     .stats-bar {
@@ -435,10 +408,14 @@
     /* ── CONDICIONES ── */
     #condiciones {
       padding: 110px 24px;
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(240,180,41,0.04) 0%, transparent 60%),
-        linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+      background: #f8f7f3;
+      color: #111;
     }
+    #condiciones .section-label { color: var(--gold-dk); }
+    #condiciones .section-heading { color: #111; }
+    .condiciones-list li { color: #555; border-bottom-color: rgba(0,0,0,0.08); }
+    .condiciones-list strong { color: #111; }
+    .cond-icon { background: rgba(180,120,0,0.1); color: var(--gold-dk); }
 
     .condiciones-inner {
       max-width: 1160px;
@@ -647,7 +624,7 @@
 
     .promo-banner {
       max-width: 1160px;
-      margin: 0 auto;
+      margin: 40px auto 48px;
       background: linear-gradient(135deg, rgba(240,180,41,0.12) 0%, rgba(240,180,41,0.04) 100%);
       border: 1px solid rgba(240,180,41,0.2);
       border-radius: 16px;
@@ -657,7 +634,6 @@
       justify-content: center;
       gap: 12px;
       text-align: center;
-      margin-bottom: 48px;
     }
     .promo-banner i { color: var(--gold); font-size: 1.3rem; }
     .promo-banner p { font-size: 1rem; color: rgba(255,255,255,0.85); }
@@ -747,11 +723,17 @@
     /* ── PEDIDO ── */
     #pedido {
       padding: 110px 24px;
-      background:
-        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(240,180,41,0.05) 0%, transparent 60%),
-        linear-gradient(160deg, #1a1a1e 0%, #0d0d10 100%);
+      background: #f0ede6;
+      color: #111;
       overflow: hidden;
     }
+    #pedido .section-label { color: var(--gold-dk); }
+    .pedido-title { color: #111; }
+    .pedido-title .line2 { color: var(--gold-dk); }
+    .pedido-list li { color: #555; border-bottom-color: rgba(0,0,0,0.08); }
+    .pedido-list-icon { background: rgba(180,120,0,0.1); color: var(--gold-dk); }
+    #pedido .btn-outline { color: #222; border-color: rgba(0,0,0,0.25); }
+    #pedido .btn-outline:hover { background: rgba(0,0,0,0.05); border-color: #222; }
 
     .pedido-inner {
       max-width: 1160px;
@@ -778,7 +760,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, transparent 60%, rgba(13,13,16,0.6));
+      background: linear-gradient(to right, transparent 60%, rgba(240,237,230,0.5));
     }
 
     .pedido-content {}
@@ -838,7 +820,7 @@
       align-items: center;
       gap: 10px;
     }
-    .footer-logo img { height: 26px; opacity: 0.6; }
+    .footer-logo img { height: 26px; filter: brightness(0) invert(1); opacity: 0.5; }
     .footer-logo span {
       font-family: 'Oswald', sans-serif;
       font-size: 0.75rem;
@@ -972,14 +954,6 @@
     <div class="hero-mockup reveal">
 
       <div class="hero-mockup-frame">
-        <div class="hero-mockup-bar">
-          <div class="hero-mockup-dot d1"></div>
-          <div class="hero-mockup-dot d2"></div>
-          <div class="hero-mockup-dot d3"></div>
-          <div class="hero-mockup-bar-url">
-            <span>mayoristas.okiregalos.com.ar</span>
-          </div>
-        </div>
         <video autoplay muted loop playsinline>
           <source src="recursos/video-home.MOV" type="video/quicktime">
           <source src="recursos/video-home.MOV" type="video/mp4">
@@ -1065,7 +1039,7 @@
       <ul class="condiciones-list">
         <li>
           <div class="cond-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <div><strong>Mínimo de compra:</strong> $100.000 por pedido</div>
+          <div><strong>Mínimo de compra:</strong> $100.000 en tu primera compra</div>
         </li>
         <li>
           <div class="cond-icon"><i class="fa-solid fa-rotate"></i></div>
@@ -1357,45 +1331,6 @@
 
 
 
-<!-- ══════════ CATÁLOGO / ABOUT ══════════ -->
-<section id="catalogo">
-  <div class="catalogo-inner reveal">
-
-    <div class="catalogo-logo">
-      <span class="cat-oki">ok<span class="cat-dot">i</span></span>
-      <div class="cat-div"></div>
-      <span class="cat-may">Mayorista</span>
-    </div>
-
-    <p class="catalogo-desc">Catálogo de precios para revendedores.</p>
-    <p class="catalogo-valid">Precios válidos hasta el 31 de Mayo del 2026</p>
-
-    <div class="catalogo-body">
-      <div class="catalogo-img">
-        <img src="recursos/DSC_7923.jpg" alt="Productos Oki">
-      </div>
-      <div class="catalogo-stats">
-        <div class="cs-item">
-          <div class="cs-num">+18.000</div>
-          <div class="cs-lbl">Seguidores en Instagram</div>
-        </div>
-        <div class="cs-item">
-          <div class="cs-num">+235.000</div>
-          <div class="cs-lbl">Seguidores en Facebook</div>
-        </div>
-        <div class="cs-item">
-          <div class="cs-num">Desde 2014</div>
-          <div class="cs-lbl">¡Cumplimos 10 años!</div>
-        </div>
-        <div class="cs-item">
-          <div class="cs-prefix">Somos</div>
-          <div class="cs-num">Fabricantes</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 <!-- ══════════ HACÉ TU PEDIDO ══════════ -->
@@ -1407,6 +1342,7 @@
     </div>
 
     <div class="pedido-content reveal" style="transition-delay:.15s">
+      <span class="section-label">Comprá ahora</span>
       <h2 class="pedido-title">
         Hacé tu<br>
         <span class="line2">pedido</span>
