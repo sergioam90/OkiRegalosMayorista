@@ -87,12 +87,12 @@
       gap: 12px;
       text-decoration: none;
     }
-    .nav-logo img { height: 32px; }
+    .nav-logo img { height: 32px; filter: brightness(0) invert(1); }
     .nav-logo-div {
-      width: 1.5px; height: 26px;
-      background: rgba(255,255,255,0.3);
+      display: none;
     }
     .nav-logo-label {
+      display: none;
       font-family: 'Oswald', sans-serif;
       font-size: 0.95rem;
       letter-spacing: 5px;
@@ -374,21 +374,21 @@
     }
 
     .hero-pill {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.18);
       border-radius: 50px;
-      padding: 12px 20px;
-      font-size: 0.75rem;
+      padding: 11px 20px;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.5px;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.65);
       text-decoration: none;
       text-align: center;
       transition: all 0.2s;
     }
     .hero-pill:hover {
-      background: rgba(240,180,41,0.1);
-      border-color: rgba(240,180,41,0.4);
+      background: rgba(240,180,41,0.08);
+      border-color: rgba(240,180,41,0.5);
       color: var(--gold);
     }
 
@@ -970,10 +970,6 @@
 
     <!-- Mockup -->
     <div class="hero-mockup reveal">
-      <div class="hero-social-pill">
-        <i class="fa-brands fa-instagram" style="color:var(--gold)"></i>
-        <span>@okiregalos</span>
-      </div>
 
       <div class="hero-mockup-frame">
         <div class="hero-mockup-bar">
@@ -1005,7 +1001,7 @@
       </h1>
       <p class="hero-sub">
         Somos fabricantes. Productos únicos con diseños exclusivos.
-        Sin mínimos, envíos a todo el país.
+        Mínimo $100.000, envíos a todo el país.
       </p>
 
       <div class="hero-btns">
@@ -1019,8 +1015,8 @@
       <div class="hero-nav-pills">
         <a href="#condiciones" class="hero-pill"><i class="fa-solid fa-file-lines" style="margin-right:6px;opacity:.6"></i>Condiciones de compra</a>
         <a href="#precios"     class="hero-pill"><i class="fa-solid fa-tag" style="margin-right:6px;opacity:.6"></i>Precios mayoristas</a>
-        <a href="#promociones" class="hero-pill"><i class="fa-solid fa-percent" style="margin-right:6px;opacity:.6"></i>Promociones activas</a>
         <a href="#promociones" class="hero-pill"><i class="fa-solid fa-bolt" style="margin-right:6px;opacity:.6"></i>Promociones</a>
+        <a href="#catalogo"    class="hero-pill"><i class="fa-solid fa-book-open" style="margin-right:6px;opacity:.6"></i>Ver catálogo</a>
       </div>
     </div>
 
@@ -1041,7 +1037,7 @@
     </div>
     <div class="stat-item reveal" style="transition-delay:.2s">
       <div class="stat-num">2014</div>
-      <div class="stat-lbl">Fundada — 10+ años</div>
+      <div class="stat-lbl">En el rubro</div>
     </div>
     <div class="stat-item reveal" style="transition-delay:.3s">
       <div class="stat-num">100%</div>
@@ -1057,10 +1053,6 @@
 
     <div class="condiciones-img-wrap reveal">
       <img src="recursos/DSC_7719-2.jpg" alt="Productos Oki con contexto">
-      <div class="cond-float-card">
-        <div class="cf-num">$25K</div>
-        <div class="cf-lbl">Envío fijo a todo el país</div>
-      </div>
     </div>
 
     <div class="condiciones-content reveal" style="transition-delay:.15s">
@@ -1073,15 +1065,11 @@
       <ul class="condiciones-list">
         <li>
           <div class="cond-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <div><strong>Mínimo de compra inicial:</strong> Sin mínimo — comprá lo que necesités</div>
+          <div><strong>Mínimo de compra:</strong> $100.000 por pedido</div>
         </li>
         <li>
           <div class="cond-icon"><i class="fa-solid fa-rotate"></i></div>
           <div>Próximas compras sin mínimo, siempre y cuando no pasen más de <strong>6 meses</strong> entre compras</div>
-        </li>
-        <li>
-          <div class="cond-icon"><i class="fa-solid fa-truck"></i></div>
-          <div><strong>Costo de envío:</strong> $25.000 valor fijo — Correo Argentino, Lunes a Viernes</div>
         </li>
         <li>
           <div class="cond-icon"><i class="fa-solid fa-infinity"></i></div>
