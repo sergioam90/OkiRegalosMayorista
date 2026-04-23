@@ -87,7 +87,16 @@
       gap: 12px;
       text-decoration: none;
     }
-    .nav-logo img { height: 32px; filter: brightness(0) invert(1); }
+    .nav-logo img { display: none; }
+    .nav-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .nav-brand-i { color: var(--gold); font-style: normal; }
     .nav-logo-div {
       display: none;
     }
@@ -338,32 +347,34 @@
 
     .hero-nav-pills {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      gap: 8px;
       padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
     }
 
     .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: transparent;
-      border: none;
-      padding: 6px 18px 6px 0;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.45);
+      gap: 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 9px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
       text-decoration: none;
-      transition: color 0.2s;
-      position: relative;
+      transition: all 0.2s;
+      white-space: nowrap;
     }
-    .hero-pill + .hero-pill::before {
-      content: '·';
-      color: rgba(255,255,255,0.2);
-      margin-right: 18px;
+    .hero-pill i { font-size: 0.72rem; opacity: 0.7; }
+    .hero-pill:hover {
+      background: rgba(240,180,41,0.1);
+      border-color: rgba(240,180,41,0.4);
+      color: var(--gold);
     }
-    .hero-pill:hover { color: var(--gold); }
+    .hero-pill:hover i { opacity: 1; }
 
     /* ── STATS BAR ── */
     .stats-bar {
@@ -920,6 +931,28 @@
       .btn-lg { width: 100%; justify-content: center; }
       .section-ctas { flex-direction: column; align-items: center; }
     }
+
+    /* ── LIGHT SECTION OVERRIDES (high specificity) ── */
+    #condiciones .condiciones-list li {
+      color: #555;
+      border-bottom-color: rgba(0,0,0,0.08);
+    }
+    #condiciones .condiciones-list li strong { color: #111; }
+    #condiciones .cond-icon {
+      background: rgba(180,120,0,0.1);
+      color: var(--gold-dk);
+    }
+    #pedido .pedido-title { color: #111; }
+    #pedido .pedido-title .line2 { color: var(--gold-dk); }
+    #pedido .pedido-list li {
+      color: #555;
+      border-bottom-color: rgba(0,0,0,0.08);
+    }
+    #pedido .pedido-list li strong { color: #111; }
+    #pedido .pedido-list-icon {
+      background: rgba(180,120,0,0.1);
+      color: var(--gold-dk);
+    }
   </style>
 </head>
 <body>
@@ -927,9 +960,7 @@
 <!-- ══════════ NAV ══════════ -->
 <nav class="nav">
   <a href="#inicio" class="nav-logo">
-    <img src="recursos/oki-mayorista-logo.png" alt="Oki Regalos">
-    <div class="nav-logo-div"></div>
-    <span class="nav-logo-label">Mayorista</span>
+    <span class="nav-brand">ok<em class="nav-brand-i">i</em></span>
   </a>
   <ul class="nav-links">
     <li><a href="#condiciones">Condiciones</a></li>
@@ -987,10 +1018,9 @@
       </div>
 
       <div class="hero-nav-pills">
-        <a href="#condiciones" class="hero-pill"><i class="fa-solid fa-file-lines" style="margin-right:6px;opacity:.6"></i>Condiciones de compra</a>
-        <a href="#precios"     class="hero-pill"><i class="fa-solid fa-tag" style="margin-right:6px;opacity:.6"></i>Precios mayoristas</a>
-        <a href="#promociones" class="hero-pill"><i class="fa-solid fa-bolt" style="margin-right:6px;opacity:.6"></i>Promociones</a>
-        <a href="#catalogo"    class="hero-pill"><i class="fa-solid fa-book-open" style="margin-right:6px;opacity:.6"></i>Ver catálogo</a>
+        <a href="#condiciones" class="hero-pill"><i class="fa-solid fa-file-lines"></i>Condiciones</a>
+        <a href="#precios"     class="hero-pill"><i class="fa-solid fa-tag"></i>Precios</a>
+        <a href="#promociones" class="hero-pill"><i class="fa-solid fa-bolt"></i>Promociones</a>
       </div>
     </div>
 
@@ -1351,11 +1381,11 @@
       <ul class="pedido-list">
         <li>
           <div class="pedido-list-icon"><i class="fa-brands fa-whatsapp"></i></div>
-          <span>Escribinos por WhatsApp al <strong style="color:var(--white)">1122517632</strong> — respondemos rápido</span>
+          <span>Escribinos por WhatsApp al <strong>1122517632</strong> — respondemos rápido</span>
         </li>
         <li>
           <div class="pedido-list-icon"><i class="fa-solid fa-truck"></i></div>
-          <span>Hacemos envíos todos los días de <strong style="color:var(--white)">Lunes a Viernes</strong> por Correo Argentino</span>
+          <span>Hacemos envíos todos los días de <strong>Lunes a Viernes</strong> por Correo Argentino</span>
         </li>
         <li>
           <div class="pedido-list-icon"><i class="fa-regular fa-calendar-check"></i></div>
